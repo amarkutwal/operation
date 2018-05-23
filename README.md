@@ -88,7 +88,6 @@
     
   6. Enable full logging of your MySQL daemon for trouble shooting
   
-    ```
     vi /etc/my.cnf
     under the [mysqld] section add the following
     log=/var/log/mysqld.log
@@ -114,21 +113,18 @@
 
   9. Restart Apache 
   
-    ```
     /etc/init.d/httpd restart
     
   10. Test the access logs in MySQL db
   
-    ```
-    tail -f /var/log/mysqld.log
-    ```
     
+    tail -f /var/log/mysqld.log
+        
     OR
     
-    ```
     mysql -uroot -p
     mysql>
     use apachelogs;
     mysql>
     select count(*) from access_log;
-    ```
+ 
