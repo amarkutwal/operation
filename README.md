@@ -27,7 +27,6 @@
     
    Search for LoadModule insert the following underneath
     
-        ```
         LoadModule log_sql_module modules/mod_log_sql.so
         LoadModule log_sql_mysql_module modules/mod_log_sql_mysql.so
         <IfModule mod_ssl.c>
@@ -36,7 +35,7 @@
         LogSQLLoginInfo mysql://alogger:apasskey@/apachelogs
         #LogSQLCreateTables on
         LogSQLDBParam socketfile /var/lib/mysql/mysql.sock
-        ```
+        
         
   4. Setup password for mysql database
       
@@ -73,7 +72,6 @@
       
   5. Setup HTTP - MySQL Logging
   
-    ```
     cd /usr/local/src/mod_log_sql-1.101/contrib/
     mysql -uroot -p
     mysql>
