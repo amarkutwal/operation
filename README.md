@@ -4,7 +4,7 @@
   
   # Steps
  
- 1. Install httpd amd mysql package to your server.
+ 1. Install httpd and mysql package to your server.
       ```
       yum install -y httpd*
       yum install -y mysql*
