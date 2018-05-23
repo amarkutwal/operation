@@ -45,18 +45,20 @@
       
       ```
       mysqld_safe --skip-grant-tables &
+      ```
       
       Start MySQL without a password
       
       ```
       mysqld_safe --skip-grant-tables &
+      ```
       
       Connect to MySQL
       
       ```
       mysql -uroot
-      
-      
+      ```
+    
       Set a new MySQL root password
       
       ```
@@ -75,19 +77,12 @@
     ```
     cd /usr/local/src/mod_log_sql-1.101/contrib/
     mysql -uroot -p
-
     mysql>
-    
     create database apachelogs;
-    
     mysql>
-    
     use apachelogs
-    
     Database changed mysql>
-    
     source create_tables.sql
-    
     mysql>
     
     grant insert on apachelogs.* to alogger@localhost identified by 'alogger_password';
