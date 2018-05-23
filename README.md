@@ -32,7 +32,7 @@
         <IfModule mod_ssl.c>
         LoadModule log_sql_ssl_module moduels/mod_log_sql_ssl.so
         </IfModule>
-        LogSQLLoginInfo mysql://alogger:apasskey@/apachelogs
+        LogSQLLoginInfo mysql://alogger:alogger_password/apachelogs
         #LogSQLCreateTables on
         LogSQLDBParam socketfile /var/lib/mysql/mysql.sock
         
