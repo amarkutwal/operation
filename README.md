@@ -93,6 +93,7 @@
     vi /etc/my.cnf
     under the [mysqld] section add the following
     log=/var/log/mysqld.log
+    
     service mysqld restart
     
   7. Create a Virtual Host in httpd.conf file
@@ -117,7 +118,7 @@
   
     /etc/init.d/httpd restart
     
-  10. Check the configured webserver page by hitting localhost or <ip_address of machine>.
+  10. Check the configured webserver page by hitting localhost or <ip_address of machine> through browser.
   
   11. Test the access logs in MySQL db
   
