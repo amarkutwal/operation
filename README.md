@@ -8,6 +8,8 @@
       ```
       yum install -y httpd*
       yum install -y mysql*
+      ```
+     *Note - Make sure httpd-devel package is installed.* 
       
  2. Download and install mod_log_sql package
       ```
@@ -32,7 +34,7 @@
         <IfModule mod_ssl.c>
         LoadModule log_sql_ssl_module moduels/mod_log_sql_ssl.so
         </IfModule>
-        LogSQLLoginInfo mysql://alogger:alogger_password/apachelogs
+        LogSQLLoginInfo mysql://<username>:<user_password>/apachelogs
         #LogSQLCreateTables on
         LogSQLDBParam socketfile /var/lib/mysql/mysql.sock
         
@@ -42,7 +44,7 @@
       Stop mysql service
       
       ```
-      mysqld_safe --skip-grant-tables &
+      /etc/init.d/mysqld stop
       ```
       
       Start MySQL without a password
@@ -82,7 +84,7 @@
     source create_tables.sql
     mysql>
     
-    grant insert on apachelogs.* to alogger@localhost identified by 'alogger_password';
+    grant insert on apachelogs.* to <username>@localhost identified by '<user_password>';
     flush privileges;
     quit
     
@@ -115,7 +117,9 @@
   
     /etc/init.d/httpd restart
     
-  10. Test the access logs in MySQL db
+  10. Check the configured webserver page by hitting localhost or <ip_address of machine>.
+  
+  11. Test the access logs in MySQL db
   
     
     tail -f /var/log/mysqld.log
